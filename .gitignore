@@ -205,3 +205,9 @@ cython_debug/
 !assets/**/*.png
 !assets/**/*.jpg
 !assets/**/*.mp4
+
+# Local experiment files
+inputs/
+assets/base/cat_example.jpg
+assets/base/cat_example.json
+assets/base/cat_example.txt
