@@ -22,7 +22,7 @@ import pydantic
 import tyro
 from cosmos_oss.init import cleanup_environment, init_environment, init_output_dir
 
-from cosmos_predict2.config import (
+from cosmos_predict2.config_josh import (
     InferenceArguments,
     InferenceOverrides,
     SetupArguments,
@@ -30,6 +30,7 @@ from cosmos_predict2.config import (
     is_rank0,
 )
 
+print("RUNNING examples/inference_josh.py")
 
 class Args(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(extra="forbid", frozen=True)
@@ -50,7 +51,7 @@ def main(
     inference_samples = InferenceArguments.from_files(args.input_files, overrides=args.overrides)
     init_output_dir(args.setup.output_dir, profile=args.setup.profile)
 
-    from cosmos_predict2.inference import Inference
+    from cosmos_predict2.inference_josh import Inference
 
     inference = Inference(args.setup)
     inference.generate(inference_samples, output_dir=args.setup.output_dir)

@@ -22,9 +22,10 @@ from cosmos_predict2._src.imaginaire.flags import SMOKE
 from cosmos_predict2._src.imaginaire.lazy_config.lazy import LazyConfig
 from cosmos_predict2._src.imaginaire.utils import distributed, log
 from cosmos_predict2._src.imaginaire.visualize.video import save_img_or_video
-from cosmos_predict2._src.predict2.inference.video2world import Video2WorldInference
-from cosmos_predict2.config import InferenceArguments, SetupArguments, path_to_str
+from cosmos_predict2._src.predict2.inference.video2world_josh import Video2WorldInference
+from cosmos_predict2.config_josh import InferenceArguments, SetupArguments, path_to_str
 
+print("RUNNING cosmos_predict2/inference_josh.py")
 
 class Inference:
     def __init__(self, args: SetupArguments):
